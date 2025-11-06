@@ -1,0 +1,16 @@
+.productDetail {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}

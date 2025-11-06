@@ -1,0 +1,11 @@
+.hero{
+    height: 12.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--quaternary-color);
+    border-radius: 1rem;
+    margin: .75rem 0;
+
+}
