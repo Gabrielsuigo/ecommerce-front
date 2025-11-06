@@ -18,7 +18,7 @@ const UserWidget = () => {
     router.push("/");
   };
 
-  // Cerrar menú al hacer clic fuera
+  // Cerrar menú al hacer clic fueraa
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
