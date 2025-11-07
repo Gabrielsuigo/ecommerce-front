@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         if (user) {
-          localStorage.removeItem(`orders-${user.user.id}`);
+          // localStorage.removeItem(`orders-${user.user.id}`);
           localStorage.removeItem("user");
         }
         setUser(null);
