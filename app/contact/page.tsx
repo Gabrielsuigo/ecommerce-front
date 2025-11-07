@@ -1,4 +1,5 @@
 const contactPage = () => {
+  //contacto
   return (
     <div className="max-w-3xl mx-auto my-20 p-10 bg-white text-black rounded-3xl shadow-xl border border-neutral-200">
       <h1 className="text-4xl font-bold text-center mb-4">📩 Contactanos</h1>
@@ -7,7 +8,7 @@ const contactPage = () => {
       </p>
       <div className="text-center space-y-4 text-lg font-medium">
         <p>📧 Email: <span className="font-semibold">support@store.com</span></p>
-        <p>📞 Teléfono: <span className="font-semibold">+54 11 1234-5678</span></p>
+        <p>📞 Teléfono: <span className="font-semibold">+54 11 2503 3874</span></p>
       </div>
     </div>
   );
