@@ -218,75 +218,72 @@ const page = () => {
               </div>
             </div>
 
-            {/* Historial de pedidos */}
-            <div className="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-2xl p-6 border border-gray-300 dark:border-gray-700 h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600">
-              <h2 className="text-xl font-semibold mb-4">
-                Historial de Pedidos
-              </h2>
+     {/* 🧾 Historial de pedidos */}
+<div className="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-2xl p-6 border border-gray-300 dark:border-gray-700 shadow-md">
+  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+    🧾 <span>Historial de Pedidos</span>
+  </h2>
 
-              {orders.length > 0 ? (
-                <div className="space-y-4">
-                  {orders.map((order, i) => (
-                    <div
-                      key={i}
-                      className="bg-gray-100 dark:bg-gray-900 rounded-xl p-4 border border-gray-300 dark:border-gray-700"
-                    >
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium">Pedido #{order.id}</span>
-                        <span
-                          className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                            order.status === "approved"
-                              ? "bg-black text-white dark:bg-white dark:text-black"
-                              : "bg-gray-400 text-black dark:bg-gray-700 dark:text-white"
-                          }`}
-                        >
-                          {order.status || "pendiente"}
-                        </span>
-                      </div>
+  {orders.length > 0 ? (
+    <div className="max-h-[450px] overflow-y-auto pr-2 custom-scroll">
+      {orders.map((order, i) => (
+        <div
+          key={i}
+          className="bg-gray-50/70 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl p-4 mb-3 shadow-sm hover:shadow-lg transition-all duration-200"
+        >
+          <div className="flex justify-between items-center mb-2">
+            <span className="font-semibold text-gray-800 dark:text-gray-100">
+              Pedido #{order.id}
+            </span>
+            <span
+              className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                order.status === "approved"
+                  ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300"
+                  : "bg-gray-400/30 text-gray-700 dark:text-gray-400"
+              }`}
+            >
+              {order.status || "Pendiente"}
+            </span>
+          </div>
 
-                      {order.createdAt && (
-                        <p className="text-sm text-gray-500 mt-1">
-                          Fecha:{" "}
-                          {new Date(order.createdAt).toLocaleString("es-AR")}
-                        </p>
-                      )}
+          {order.createdAt && (
+            <p className="text-xs text-gray-500 mb-1">
+              📅 {new Date(order.createdAt).toLocaleString("es-AR")}
+            </p>
+          )}
 
-                      {order.total && (
-                        <p className="text-sm text-gray-500">
-                          💰 Total:{" "}
-                          {order.total.toLocaleString("es-AR", {
-                            style: "currency",
-                            currency: "ARS",
-                          })}
-                        </p>
-                      )}
+          {order.total && (
+            <p className="text-sm text-gray-700 dark:text-gray-300 font-medium mb-2">
+              💰 Total:{" "}
+              {order.total.toLocaleString("es-AR", {
+                style: "currency",
+                currency: "ARS",
+              })}
+            </p>
+          )}
 
-                      {order.products && order.products.length > 0 && (
-                        <div className="mt-2 text-sm">
-                          {order.products.map((prod, j) => (
-                            <div
-                              key={j}
-                              className="flex justify-between border-b border-gray-300 dark:border-gray-700 py-1"
-                            >
-                              <span>
-                                {prod.name} x{prod.quantity}
-                              </span>
-                              <span>
-                                ${(prod.price * prod.quantity).toFixed(2)}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+          {order.products && order.products.length > 0 && (
+            <div className="divide-y divide-gray-200 dark:divide-gray-700 mt-2">
+              {order.products.map((prod, j) => (
+                <div
+                  key={j}
+                  className="flex justify-between py-1 text-sm text-gray-700 dark:text-gray-300"
+                >
+                  <span>{prod.name} × {prod.quantity}</span>
+                  <span>${(prod.price * prod.quantity).toFixed(2)}</span>
                 </div>
-              ) : (
-                <p className="text-gray-500 dark:text-gray-400">
-                  No hay pedidos registrados.
-                </p>
-              )}
+              ))}
             </div>
+          )}
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p className="text-gray-500 dark:text-gray-400 text-sm italic">
+      No hay pedidos registrados todavía.
+    </p>
+  )}
+</div>
           </div>
         </div>
       </div>
