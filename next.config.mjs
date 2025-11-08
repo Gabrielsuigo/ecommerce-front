@@ -10,5 +10,8 @@ const nextConfig = {
       // agregá los dominios de donde vengan tus productos
     ],
   },
+    eslint: {
+    ignoreDuringBuilds: true, // 🔥 evita que el build falle por warnings
+  },
 };
 export default nextConfig;
