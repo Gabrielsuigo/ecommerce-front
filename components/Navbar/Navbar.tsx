@@ -25,7 +25,7 @@ const Navbar = () => {
     const delayDebounce = setTimeout(() => {
       const search = async () => {
         if (searchTerm.trim().length >= 2) {
-          try{
+          try {
             const res = await fetch(
               `${process.env.NEXT_PUBLIC_API_URL}/products?name=${searchTerm}`
             );
@@ -53,8 +53,6 @@ const Navbar = () => {
 
     return () => clearTimeout(delayDebounce);
   }, [searchTerm]);
-
-  
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -88,7 +86,10 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             {user && cart && (
               <Link href="/cart" className="relative group">
-                <ShoppingCart className="w-6 h-6 text-black dark:text-white transition" />
+                <ShoppingCart
+                  id="navbar-cart-icon"
+                  className="w-6 h-6 text-black dark:text-white transition"
+                />
                 {cart.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-xs px-2 py-0.5 rounded-full">
                     {cart.length}
@@ -96,7 +97,7 @@ const Navbar = () => {
                 )}
               </Link>
             )}
-            <UserWidget /> 
+            <UserWidget />
           </div>
         </div>
       </nav>
@@ -104,10 +105,12 @@ const Navbar = () => {
       {/* Resultados en overlay */}
 
       {showResults && filteredProducts.length > 0 && (
-        <SearchResults products={filteredProducts} onClick={handleProductClick} />
-        )}
-        </>
-        
+        <SearchResults
+          products={filteredProducts}
+          onClick={handleProductClick}
+        />
+      )}
+    </>
   );
 };
 
