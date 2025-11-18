@@ -53,7 +53,7 @@ const Card = ({ name, image, price, id, ...rest }: CardProps) => {
         imgClone.style.opacity = "0.4";
       });
 
-      // remover el clon
+      // remover el clo
       setTimeout(() => imgClone.remove(), 900);
 
       // ✨ rebote del carrito
