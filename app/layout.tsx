@@ -8,7 +8,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Apple store",
   description: "Henry",
-  icons: "/apple-logo.png"
+  icons: "/apple-logo.png",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -21,9 +22,6 @@ export default function RootLayout({
     
     <AuthProvider>
       <html lang="es">
-         <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </head>
         <body className="flex flex-col min-h-screen bg-white text-black transition-colors duration-300 font-sans">
           <CartProvider>
             <Navbar />
