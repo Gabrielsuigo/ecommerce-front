@@ -67,7 +67,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-white dark:bg-black text-black dark:text-white py-4 shadow-md border-b border-neutral-200 dark:border-neutral-800 rounded-none z-50 relative">
-        <div className="container mx-auto px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">          <Link
+        <div className="container mx-auto px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">          
+          <Link
             href="/"
             className="flex items-center hover:scale-105 transition duration-300"
           >
@@ -82,7 +83,7 @@ const Navbar = () => {
 
           <SearchBar value={searchTerm} onChange={handleSearchChange} />
 
-        cd<div className="flex items-center justify-between md:justify-end gap-4 w-full md:w-auto">
+        <div className="flex items-center justify-between md:justify-end gap-4 w-full md:w-auto">
             {user && cart && (
               <Link href="/cart" className="relative group">
                 <ShoppingCart
