@@ -68,10 +68,10 @@ const Navbar = () => {
     <>
       <nav className="bg-white dark:bg-black text-black dark:text-white py-4 shadow-md border-b border-neutral-200 dark:border-neutral-800 rounded-none z-50 relative">
          
-          <div className="container mx-auto px-4 flex flex-col gap-3">
+       <div className="container mx-auto px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
 
-  {/* FILA 1: logo + buscador */}
-  <div className="flex items-center gap-3">
+  {/* IZQUIERDA: logo + buscador */}
+  <div className="flex items-center gap-3 w-full md:w-auto">
     <Link
       href="/"
       className="flex items-center hover:scale-105 transition duration-300"
@@ -85,13 +85,14 @@ const Navbar = () => {
       </svg>
     </Link>
 
-    <div className="flex-1">
+    {/* buscador ocupa todo en mobile, tamaño normal en desktop */}
+    <div className="flex-1 md:w-96">
       <SearchBar value={searchTerm} onChange={handleSearchChange} />
     </div>
   </div>
 
-  {/* FILA 2: botones */}
-  <div className="flex items-center justify-between md:justify-end gap-4 w-full">
+  {/* DERECHA: botones */}
+  <div className="flex items-center justify-between md:justify-end gap-4 w-full md:w-auto">
     {user && cart && (
       <Link href="/cart" className="relative group">
         <ShoppingCart className="w-6 h-6" />
@@ -104,6 +105,7 @@ const Navbar = () => {
     )}
     <UserWidget />
   </div>
+
 </div>
       </nav>
 
