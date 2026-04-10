@@ -80,8 +80,19 @@ const Card = ({ name, image, price, id, ...rest }: CardProps) => {
   };
 
   return (
-    <article className="group relative w-[380px] bg-gradient-to-b from-[#f7f7f8] to-[#ebebeb] dark:from-[#1c1c1c] dark:to-[#121212] border border-neutral-300 dark:border-neutral-800 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-1 p-6 overflow-hidden">
-      {/* Nombre */}
+<article className="
+  group relative
+  min-w-[250px] max-w-[250px]
+  md:min-w-0 md:max-w-none md:w-full
+  bg-gradient-to-b from-[#f7f7f8] to-[#ebebeb]
+  dark:from-[#1c1c1c] dark:to-[#121212]
+  border border-neutral-300 dark:border-neutral-800
+  rounded-[2rem] shadow-sm hover:shadow-2xl
+  transition-all duration-500 ease-out
+  transform hover:-translate-y-1
+  p-6 overflow-hidden
+">
+        {/* Nombre */}
       <h3 className="text-xl font-semibold mb-3 tracking-tight text-gray-900 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition">
         {name}
       </h3>

@@ -6,8 +6,11 @@ interface CardListProps {
 
 export default function CardList({ children }: CardListProps)  {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-      {children}
+<div className="
+  flex gap-4 overflow-x-auto pb-4
+  md:grid md:grid-cols-2 lg:grid-cols-3
+  md:overflow-visible
+">      {children}
     </div>
   );
 };
